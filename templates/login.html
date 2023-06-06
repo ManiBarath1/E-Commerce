@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%block title%}
+Login
+{%endblock%}
+
+{% block content %}
+<body class="text-center">
+<div class="container">
+    <img class="mb-4" src="../static/images/logo.png" >
+        <h1 class="h3 mb-3 font-weight-normal">
+            Please Create your Account
+        </h1><br>
+        <form method="POST" class="form-register" style="color:white">
+            {{form.hidden_tag()}}
+{{form.username.label()}}
+{{form.username(class="form-control",placeholder="User Name")}}
+
+{{form.password.label()}}
+{{form.password(class="form-control",placeholder="Password")}}
+
+<br><br>
+{{form.submit(class="btn btn-lg btn-block btn-primary")}}
+<hr>
+        <div>
+            <h3>New to the site?</h3>
+            <a class="btn btn-sm btn-secondary" href="{{url_for('register_page')}}">Register</a>
+        </div>
+        </form>
+</div>
+</body>
+{%endblock%}
